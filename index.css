@@ -1,0 +1,888 @@
+@charset "utf-8";
+body {
+    font-family: "Noto Sans KR", serif;
+    /* font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal; */
+}
+
+#main-wrap {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    background-image: url('./images/sea.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; 
+}
+
+
+#main-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.127); /* 검은색 반투명 오버레이 */
+    z-index: 1; /* 오버레이가 텍스트 뒤에 오도록 설정 */
+}
+
+.top-txt, .visual-txt, .contact, .footer {
+    position: relative; /* 그림자가 보이도록 설정 */
+    z-index: 2; /* 텍스트가 오버레이 위에 오도록 설정 */
+}
+
+.top-txt {
+    display: flex;
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+}
+
+.top-txt > .top-wrap {
+    position: absolute;
+    top:-30px;
+    display: flex;
+    justify-content: space-between; /* 양 끝 아이템 간격을 조정 */
+    width: 100%; /* 전체 너비 사용 */
+}
+
+.top-txt > .top-wrap > ul {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between; /* 아이템 간격을 조정 */
+    width: 100%; /* 전체 너비 사용 */
+}
+
+.visual-txt {
+    padding: 20px;
+    position: absolute;
+}
+
+.visual-txt > .txt-wrap > h1 {
+    font-size: 64px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(39, 39, 39, 0.7); /* 텍스트 그림자 추가 */
+}
+
+.visual-txt > .txt-wrap > p {
+    font-size: 38px;
+    font-weight: 300;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(39, 39, 39, 0.7); /* 텍스트 그림자 추가 */
+    border-right: 2px solid white; /* 커서 효과 */
+    white-space: nowrap; /* 한 줄로 표시 */
+    overflow: hidden; /* 넘치는 텍스트 숨김 */
+    animation: blink 0.7s step-end infinite; /* 커서 깜박임 효과 */
+    display: inline-block; /* inline-block으로 변경 */
+    padding-right: 5px; /* 텍스트와 커서 사이 간격 조정 */
+}
+
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent; /* 커서 깜박임 */
+    }
+}
+
+
+
+
+
+
+.contact {
+    line-height: 1.2;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(39, 39, 39, 0.7); /* 텍스트 그림자 추가 */
+}
+.BTN {
+    align-self: center;
+    position: relative;
+    /* top:350px; */
+    width: 100px;
+    animation: BTNmotion 0.3s linear 0s infinite alternate; margin-top: 860px;    
+    z-index: 9999;
+    
+}
+@keyframes BTNmotion {
+	0% {
+        right: 0;
+    }
+	100% {
+        right: 10px;
+    }
+}
+
+.BTN > button {
+    width: 45px;
+    height: 45px;
+    padding:10px ;
+    background-image: url(./icons/enter.png);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    filter:  invert(100%);
+    cursor: pointer;
+    
+}
+.BTN > button:active {
+    position: relative;
+    top:2px;
+}       
+
+/* .clear__and__enter > button {
+    border-radius: 25px;
+    width: 104px;
+    height: 40px;
+    background-color: #eee;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+  } */
+  
+  /* .clear__and__enter > button:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    position: relative;
+    top:2px;
+  }
+   */
+
+
+
+
+
+
+
+.foot {
+    line-height: 1.2;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(39, 39, 39, 0.7); /* 텍스트 그림자 추가 */
+}
+
+
+.container {
+    width: 100%;
+}
+.container > .profile-card{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    top:80px;
+    left: -45px;
+}
+
+
+.container > .profile-card > h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #004288;
+    margin-bottom: 30px;
+}
+
+.container  .namebox {
+    width: 650px;
+}
+
+.close-btn {
+    position: relative;
+    top:-760px;
+    right:60px;
+    padding: 20px;
+    background-image: url(./icons/icon-x-button.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color:transparent;
+    border: none;
+    box-shadow:.8rem .5rem 1.4rem  #BEC5D0, -.3rem -.4rem .8rem #FBFBFB;
+
+}
+
+.close-btn:active {
+    box-shadow: inset -.3rem -.1rem 1.4rem  #FBFBFB, inset .3rem .4rem .8rem #BEC5D0; 
+}
+
+.profile-header img {
+    width: 180px;
+    position: relative;
+    top:-680px;
+    left: 230px;
+    border-radius: 48%;
+    
+}
+#pro-top {
+    position: relative;
+    top:-700px;
+    line-height: 2.8;
+    padding: 50px;
+    text-align: start;
+}
+#pro-top > h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+}
+#pro-top > p {
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+#pro-top > p .name {
+    margin-left: 180px;
+}
+.contacts {
+    position: relative;
+    top:-780px;
+    line-height: 2.6;
+    padding: 50px;
+    text-align: start;
+
+}
+.contacts > h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+}
+.contacts > p {
+    font-size: 18px;
+    font-weight: bold;
+}
+.contacts > p .label {
+    margin-left: 180px;
+}
+#ins span {
+    position: relative;
+    margin-left:150px;
+}
+.side-wrap {
+    position: relative;
+    width: 100%; 
+}
+
+/* .side-wrap > .key > .mykey {
+    position: absolute;
+    bottom:1180px; 
+    left: 890px;
+} */
+.side-wrap > .key > .mykey {
+    position: absolute;
+    top: -1530px; 
+    right: 280px;
+    z-index: 10;
+}
+
+
+.side-wrap > .key > .mykey  > h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #004288;
+    width: 400px;
+}
+.side-wrap > .key > .mykey  > ul {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    justify-content: center;
+}
+
+.side-wrap > .key > .mykey  > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-wrap > .key > .mykey  > ul > li p {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100px; 
+    height: 100px; 
+}
+
+.side-wrap > .key > .mykey  > ul > li div p {
+    border: 4px solid #004288;
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0; 
+    text-align: center; 
+    
+}
+
+
+
+.skil {
+    position: relative;
+}
+.skil > .myskl {
+    position: absolute;
+    top: -1330px; 
+    right: 300px;
+    z-index: 10;
+}
+
+.skil > .myskl > h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #004288;
+    width: 400px;
+}
+.skil > .myskl > ul {
+    display: flex;
+    gap: 18px;
+}
+.skil > .myskl > ul > li {
+    display: flex;
+}
+
+.skil > .myskl > ul > li img {
+    width: 50px;
+}
+
+
+.edu {
+    position: relative;
+}
+
+.edu > .myedu {
+    top: -1150px; 
+    right: 300px;
+    z-index: 10;
+    position: absolute;
+}
+.edu > .myedu > h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #004288;
+    width: 400px;
+}
+.edu > .myedu > ul {
+    line-height: 2.2;
+    font-size: 16px;
+}
+.edu > .myedu > ul > .edu-txt {
+    color: #808080;
+    font-size: 14px;
+}
+
+
+.underline {
+    position: relative;
+    bottom: 550px;
+    width: 100%;
+    border:1px solid #e7e7e7;
+}
+#sub-container {
+    position: relative;
+    top:-520px;
+    width: 100%;
+}
+
+#sub-container > .sub-wrap > .sub-1 > h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #004288;
+    margin-left: 40px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+}
+#sub-container > .sub-wrap > .sub-1 > p {
+    font-size: 38px;
+    font-weight: 400;
+    color: #004288;
+    margin-left: 40px;
+}
+#sub-container > .sub-wrap > .sub-1  img:first-child {
+    width: 750px;
+    position: relative;
+    left: 800px;
+    z-index: 1;
+}
+#sub-container > .sub-wrap > .sub-1  img:last-child {
+    width: 650px;
+    position: relative;
+    z-index: 3;
+    top:55px;
+    left:-320px;
+}
+.underline2 {
+    position: relative;
+    bottom:0;
+    width: 100%;
+    border:1px solid #e7e7e7;
+}
+#second-wrap {
+    width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    top:-400px;
+    font-size: 16px;
+    background: #ffffff; /* 배경색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+#second-wrap   img {
+    width: 55px;
+}
+#second-wrap> .sec-wrap  {
+    display: flex;
+    padding-top: 50px;
+    
+}
+#second-wrap> .sec-wrap > .sec-wraper {
+    justify-content: space-between;
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: start;
+}
+#second-wrap> .sec-wrap > .sec-wraper  h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#second-wrap> .sec-wrap > .sec-wraper  p {
+    width: 500px;
+    word-break: keep-all;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+#second-wrap> .sec-wrap > .sec-wraper > .font > .font-con {
+    line-height: 1.8;
+}
+#second-wrap> .sec-wrap > .sec-wraper > .font   p:first-child {
+    font-weight: 300;
+}
+#second-wrap> .sec-wrap > .sec-wraper > .font   p:nth-child(2) {
+    font-weight: 400;
+}
+#second-wrap> .sec-wrap > .sec-wraper > .font   p:last-child {
+    font-weight: 700;
+}
+
+.thi-wrap {
+    display: flex;
+}
+.thi-wrap > .thi-wraper {
+    margin: 0 auto;
+    padding: 20px;
+}
+.thi-wrap > .thi-wraper > h2 {
+    font-size: 26px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.thi-wrap > .thi-wraper > .goal-wrap {
+    display: flex;
+    width: 1200px;
+    gap: 28px;
+    
+}
+.thi-wrap > .thi-wraper > .goal-wrap  img {
+    position: relative;
+    top:50px;
+}
+
+.thi-wrap > .thi-wraper > .goal-wrap  .mygo  p {
+    line-height: 1.8;
+}
+
+.thi-wrap > .thi-wraper > .goal-wrap > .solu > .mysol > p {
+    line-height: 1.8;
+}
+
+.thi-wrap > .thi-wraper   h3, h2 {
+    font-size: 24px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.thi-wrap > .thi-wraper   p {
+    font-size: 16px;
+    
+    
+}
+#mygo-txt {
+    width: 550px;
+    word-break: break-all;
+}
+
+
+.four-wrap {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 30px;
+    display: flex;
+}
+.four-wrap > .lalast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}.four-wrap > .lalast > .lllast {
+    display: flex;
+    
+}
+
+.keyword-section {
+    text-align: start;
+    margin-bottom: 40px;
+}
+
+.keyword-section h2 {
+    color: #004288; 
+    margin-bottom: 10px; 
+}
+
+.keyword-section p {
+    color: #333; 
+    line-height: 2.2; 
+    margin-bottom: 30px; 
+}
+#arrow-txt {
+    position: relative;
+    left: 145px;
+    font-weight: 500;
+    
+}
+.keyword-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 40px; 
+}
+
+.keyword {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
+    width: 100px; 
+    height: 100px; 
+    border: 2px solid #004288; 
+    border-radius: 50%; 
+    background-color: #ffffff; 
+    color: #004288; 
+    text-align: center; 
+    padding: 10px; 
+}
+
+.arrow-down {
+    margin: 20px 0; 
+}
+
+.arrow-down img {
+    width: 24px;
+    position: relative;
+    left: 245px;
+}
+
+
+.brand-color-section {
+    text-align: start;
+    position: relative;
+    left: 110px;
+    
+    
+}
+
+.brand-color-section  h2 {
+    color: #004288; 
+    margin-bottom: 10px; 
+}
+
+.brand-color-section  p {
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+}
+
+.color-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    padding-top: 20px;
+}
+
+.brand-color {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    padding: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: #ffffff; 
+    font-weight: bold; 
+    font-size: 18px; 
+}
+.last-section {
+    position: relative;
+    top:-280px;
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.underline6 {
+    position: relative;
+    bottom:260px;
+    width: 100%;
+    border:1px solid #e7e7e7;
+}
+.last-section  img {
+    width: 800px;
+    z-index: -999;
+    position: relative;
+    top:150px;
+
+}
+.last-section > .llast-last {
+    display: flex;
+}
+.last-section > .llast-last > .last-txt-sec {
+    text-align: end;
+    position: relative;
+    top:468px;
+}
+.last-section > .llast-last > .last-txt-sec > .two {
+    position: absolute;
+    top:830px;
+}
+.last-section > .llast-last > .last-txt-sec > .tre {
+    position: absolute;
+    top:1532px;
+}
+.last-section > .llast-last > .last-txt-sec > .foure {
+    position: absolute;
+    top:2532px;
+}
+.last-section > .llast-last > .last-txt-sec  h3 {
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.last-section > .llast-last > .last-txt-sec  p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+.last-section > .llast-last > .last-txt-sec div {
+    position: relative;
+    width: 100%;
+    border-bottom:1.5px dotted #c8c8c8;
+    z-index: 999;
+}
+#img-sec {
+    position: relative;
+    bottom:60px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+    background: #ffffff; /* 배경색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+#img-sec > .img-section {
+    display: flex;
+}
+#img-sec  img {
+    width: 550px;
+}
+.bottom1 {
+    z-index: 9;
+    position: relative;
+    left: -550px;
+}
+.mid1 {
+    z-index: 99;
+    position: relative;
+    left: -250px;
+}
+.top1 {
+    z-index: 999;
+    position: relative;
+    right: -50px;
+}
+/* .underline7 {
+    position: relative;
+    top:-80px;
+    width: 100%;
+    border:1px solid #e7e7e7;
+} */
+.bye-bye {
+    margin: 0;
+    
+}
+.bye {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url('./images/thank.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; 
+    /* top:-60px; */
+
+}
+
+.bye-bye > .bye > .bye-more {
+    align-items: start;
+    justify-content: start;
+    width: 1200px;
+    display: flex;
+    
+}
+.bye-bye > .bye > .bye-more > .more {
+    position: relative;
+    top:150px;
+    left: 90px;
+    text-align: center;
+}
+.bye > .bye-more > .more > h4 {
+    font-size: 28px;
+    color: #004288;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.bye > .bye-more > .more > ul {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0;            /* 기본 패딩 제거 */
+}
+.bye > .bye-more > .more > ul > li {
+    margin: 60px 0; /* li 요소 간의 간격 조정 */
+    line-height: 1.5;
+}
+.bye > .bye-more > .more > ul > li h5 {
+    font-weight: 400;
+    font-size: 22px;
+    color: #004288;
+    margin: 0; /* h5 요소의 기본 마진 제거 */
+    transition: color 0.3s;
+}
+.bye > .bye-more > .more > ul > li.clicked h5 {
+    color: red !important;
+    font-weight: 600;
+}
+#bye-logo {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: start;    /* 가로 중앙 정렬 */
+    justify-content: start;  /* 세로 중앙 정렬 */
+    position: relative;
+    top:210px;
+    left: 150px;
+
+}
+#bye-logo > div {
+    display: flex;
+    flex-direction: column; /* 내부 링크들을 세로로 정렬 */
+    align-items: start;      /* 가로 중앙 정렬 */
+}
+#bye-logo > div > a {
+    margin: 25px 0; /* li 요소 간의 간격 조정 */
+    line-height: 2.6;
+    
+}
+
+#bye-logo > div > .vol img {
+    width: 90px !important; 
+}
+#bye-logo > div > a img:last-child {
+    width: 120px;
+}
+
+
+
+.cont-act {
+    position: absolute; 
+    bottom: 20px;   
+    right: 20px;
+    display: inline-block;
+    animation: popupmotion 0.3s infinite;
+      
+
+}
+@keyframes popupmotion {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+.cont-act a img {
+    width: 70px;
+}
+
+
+.popup {
+    display: none;  
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.popup img {
+    max-width: 100%;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #004288;
+}
+
+
+
+
+
+
+
+
